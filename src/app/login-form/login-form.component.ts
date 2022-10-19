@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http'; 
 import User from '../user';
 
@@ -7,7 +7,7 @@ import User from '../user';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css']
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent {
 
   private loginUrl = 'http://localhost:9090/auth/login'
 
@@ -28,10 +28,6 @@ export class LoginFormComponent implements OnInit {
     private http: HttpClient,
   ) { }
 
-  ngOnInit(): void {
-  }
-
-  // TODO remove user form parameters and use this
   login(): void {
     console.log(this.user);
     this.http.post<{msg: string}>(this.loginUrl, this.user, this.httpOptions)

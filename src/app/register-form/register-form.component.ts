@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LogRegTabsService } from '../services/log-reg-tabs.service';
 import User from '../user';
 
@@ -8,15 +8,12 @@ import User from '../user';
   templateUrl: './register-form.component.html',
   styleUrls: ['./register-form.component.css']
 })
-export class RegisterFormComponent implements OnInit {
+export class RegisterFormComponent {
 
   constructor(
     private http: HttpClient,
     private tabsService: LogRegTabsService
   ) { }
-
-  ngOnInit(): void {
-  }
 
   private registerUrl = 'http://localhost:9090/users';
 

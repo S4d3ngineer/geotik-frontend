@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LogRegTabsService } from '../services/log-reg-tabs.service';
 
 @Component({
@@ -6,13 +6,10 @@ import { LogRegTabsService } from '../services/log-reg-tabs.service';
   templateUrl: './login-register.component.html',
   styleUrls: ['./login-register.component.css']
 })
-export class LoginRegisterComponent implements OnInit {
+export class LoginRegisterComponent {
 
   constructor(
     public tabsService: LogRegTabsService,
   ) { }
-
-  ngOnInit(): void {
-  }
 
 }

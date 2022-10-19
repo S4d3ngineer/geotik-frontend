@@ -8,21 +8,25 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module'; 
 import { HttpClientModule } from '@angular/common/http';
 import { LoginRegisterComponent } from './login-register/login-register.component';
-import { RegisterFormComponent } from './register-form/register-form.component'; 
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ResetPasswordComponent } from './reset-password/reset-password.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
     LoginRegisterComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
