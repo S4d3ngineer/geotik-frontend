@@ -7,13 +7,15 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module'; 
 import { HttpClientModule } from '@angular/common/http';
-import { LoginRegisterComponent } from './login-register/login-register.component'; 
+import { LoginRegisterComponent } from './login-register/login-register.component';
+import { RegisterFormComponent } from './register-form/register-form.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
-    LoginRegisterComponent
+    LoginRegisterComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,

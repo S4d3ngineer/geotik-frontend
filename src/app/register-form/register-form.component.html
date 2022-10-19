@@ -1,0 +1,17 @@
+<div class="form">
+  <form class="form-content">
+    <mat-form-field>
+      <label for="email">login/e-mail</label>
+      <input matInput id="email" type="email" requiered [(ngModel)]="user.email" name="email">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="password" floatLabel="never">hasło</mat-label>
+      <input matInput id="password" type="password" placeholder="placeholder" requiered [(ngModel)]="user.password" name="password">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="password" floatLabel="never">powtórz hasło</mat-label>
+      <input matInput id="rep-password" type="password" placeholder="placeholder" requiered [(ngModel)]="repPassword" name="repPassword">
+    </mat-form-field>
+    <button mat-flat-button type="submit" color="primary" (click)="register()">Login</button>
+  </form>
+</div>
