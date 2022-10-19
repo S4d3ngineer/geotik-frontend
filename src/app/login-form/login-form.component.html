@@ -11,7 +11,7 @@
       <mat-icon matSuffix>close</mat-icon>
       <mat-hint align="end"><a href="/">Zresetuj hasło</a></mat-hint>
     </mat-form-field>
-    <div>{{message}}</div>
-    <button mat-flat-button type="submit" color="primary" (click)="login(user)">Login</button>
+    <div class="notification">{{message}}</div>
+    <button mat-flat-button type="submit" color="primary" (click)="login()">Login</button>
   </form>
 </div>

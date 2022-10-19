@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http'; 
-
-interface User {
-  email: string;
-  password: string;
-}
+import User from '../user';
 
 @Component({
   selector: 'app-login-form',
@@ -16,8 +12,8 @@ export class LoginFormComponent implements OnInit {
   private loginUrl = 'http://localhost:9090/auth/login'
 
   user: User = {
-    email: '',
-    password: ''
+    email: null,
+    password: null
   }
 
   message: string | null = null;
@@ -35,9 +31,10 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(user: User): void {
-    console.log(user);
-    this.http.post<{msg: string}>(this.loginUrl, user, this.httpOptions)
+  // TODO remove user form parameters and use this
+  login(): void {
+    console.log(this.user);
+    this.http.post<{msg: string}>(this.loginUrl, this.user, this.httpOptions)
       .subscribe({
         next: response => this.message = response.msg,
         error: e => {
