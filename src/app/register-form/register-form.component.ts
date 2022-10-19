@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { LogRegTabsService } from '../services/log-reg-tabs.service';
 import User from '../user';
 
 @Component({
@@ -8,6 +9,14 @@ import User from '../user';
   styleUrls: ['./register-form.component.css']
 })
 export class RegisterFormComponent implements OnInit {
+
+  constructor(
+    private http: HttpClient,
+    private tabsService: LogRegTabsService
+  ) { }
+
+  ngOnInit(): void {
+  }
 
   private registerUrl = 'http://localhost:9090/users';
 
@@ -25,21 +34,18 @@ export class RegisterFormComponent implements OnInit {
     })
   }
 
-  constructor(
-    private http: HttpClient
-  ) { }
-
-  ngOnInit(): void {
-  }
-
   register(): void {
+    // Generate id for new user
     this.user.id = 'user_' + Math.floor(Math.random() * 10000000);
     const newUser = JSON.stringify(this.user);
     console.log(this.user);
     console.log(newUser);
-    this.http.post<User>(this.registerUrl, newUser, this.httpOptions)
+    this.http.post<User | {msg: string}>(this.registerUrl, newUser, this.httpOptions)
       .subscribe({
-        next: response => console.log(response),
+        next: response => {
+          console.log(response);
+          this.tabsService.setLoginRegisterTabIndex(0);
+        },
         error: e => console.error(e)
       })
   }

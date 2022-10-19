@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LogRegTabsService } from '../services/log-reg-tabs.service';
 
 @Component({
   selector: 'app-login-register',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginRegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public tabsService: LogRegTabsService,
+  ) { }
 
   ngOnInit(): void {
   }
