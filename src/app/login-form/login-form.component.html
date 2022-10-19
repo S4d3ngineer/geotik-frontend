@@ -1,0 +1,17 @@
+<div class="form">
+  <form class="form-content">
+    <mat-form-field>
+      <mat-label for="password" floatLabel="never">hasło</mat-label>
+      <input matInput id="password" type="password" placeholder="placeholder" requiered [(ngModel)]="user.password" name="password">
+      <mat-icon matSuffix>close</mat-icon>
+    </mat-form-field>
+    <mat-form-field>
+      <label for="email">login/e-mail</label>
+      <input matInput id="email" type="email" requiered [(ngModel)]="user.email" name="email">
+      <mat-icon matSuffix>close</mat-icon>
+      <mat-hint align="end"><a href="/">Zresetuj hasło</a></mat-hint>
+    </mat-form-field>
+    <div>{{message}}</div>
+    <button mat-flat-button type="submit" color="primary" (click)="login(user)">Login</button>
+  </form>
+</div>
