@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength'; 
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 const MaterialComponents = [
   MatFormFieldModule,
@@ -12,6 +13,7 @@ const MaterialComponents = [
   MatIconModule,
   MatTabsModule,
   MatButtonModule,
+  MatTooltipModule
 ];
 
 
