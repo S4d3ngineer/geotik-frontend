@@ -8,11 +8,7 @@ import { Component } from '@angular/core';
 export class ResetPasswordComponent {
   
   email: string | null = null;
-  
-  constructor() { }
 
-  sendLink() {
-    console.log("It works");
-  }
+  submitted = false;
 
 }
