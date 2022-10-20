@@ -13,7 +13,7 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label for="password">hasło</mat-label>
-      <input matInput id="password" type="password" placeholder="placeholder" required
+      <input matInput id="password" type="password" required
         pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}" [(ngModel)]="user.password" name="password" #password>
       <button class="check-button" mat-icon-button matSuffix color="primary" tabindex="-1" type="button">
         <mat-icon>check</mat-icon>
@@ -28,7 +28,7 @@
     </div>
     <mat-form-field>
       <mat-label for="password">powtórz hasło</mat-label>
-      <input matInput id="rep-password" type="password" placeholder="placeholder" required [(ngModel)]="repPassword"
+      <input matInput id="rep-password" type="password" required [(ngModel)]="repPassword"
         name="repPassword">
       <button class="check-button" mat-icon-button matSuffix color="primary" tabindex="-1" type="button">
         <mat-icon>check</mat-icon>

@@ -2,7 +2,7 @@
   <form class="form-content" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
     <mat-form-field>
       <mat-label for="password">hasło</mat-label>
-      <input matInput type="password" placeholder="placeholder" required [(ngModel)]="user.password" #password="ngModel"
+      <input matInput type="password" required [(ngModel)]="user.password" #password="ngModel"
         name="password">
       <button class="reset-field-button" mat-icon-button matSuffix tabindex="-1" type="button"
         (click)="password.reset()">
