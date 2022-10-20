@@ -11,7 +11,8 @@ import { LoginRegisterComponent } from './login-register/login-register.componen
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { BannerComponent } from './banner/banner.component'; 
+import { BannerComponent } from './banner/banner.component';
+import { MatchPasswordDirective } from './directives/match-fields.directive'; 
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BannerComponent } from './banner/banner.component';
     LoginRegisterComponent,
     RegisterFormComponent,
     ResetPasswordComponent,
-    BannerComponent
+    BannerComponent,
+    MatchPasswordDirective
   ],
   imports: [
     BrowserModule,

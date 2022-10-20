@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { LogRegTabsService } from '../services/log-reg-tabs.service';
 import User from '../user';
 
@@ -25,22 +26,23 @@ export class RegisterFormComponent {
 
   repPassword = null;
 
+  passwordRegex = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}/);
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
 
-  register(): void {
+  register(registerform: NgForm): void {
     // Generate id for new user
     this.user.id = 'user_' + Math.floor(Math.random() * 10000000);
     const newUser = JSON.stringify(this.user);
-    console.log(this.user);
-    console.log(newUser);
     this.http.post<User | {msg: string}>(this.registerUrl, newUser, this.httpOptions)
       .subscribe({
         next: response => {
           console.log(response);
+          registerform.resetForm();
           this.tabsService.setLoginRegisterTabIndex(0);
         },
         error: e => console.error(e)

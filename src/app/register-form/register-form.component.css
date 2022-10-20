@@ -7,6 +7,19 @@
   margin: 0px auto;
 }
 
-button {
+.password-strength-container {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.submit-button {
   margin-top: 20px;
+}
+
+.check-button {
+  display: none;
+}
+
+.ng-valid .check-button {
+  display: block;
 }

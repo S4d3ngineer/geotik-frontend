@@ -1,19 +1,35 @@
 <div class="form">
-  <form class="form-content">
+  <form class="form-content" #registerForm="ngForm" (ngSubmit)="register(registerForm)"
+    [appMatchFields]="['password', 'repPassword']">
     <mat-form-field>
-      <label for="email">login/e-mail</label>
-      <input matInput id="email" type="email" requiered [(ngModel)]="user.email" name="email">
+      <mat-label for="email">login/e-mail</mat-label>
+      <input matInput id="email" type="email" required [(ngModel)]="user.email" name="email" email
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      <button class="check-button" mat-icon-button matSuffix color="primary" tabindex="-1" type="button">
+        <mat-icon>check</mat-icon>
+      </button>
     </mat-form-field>
     <mat-form-field>
-      <mat-label for="password" floatLabel="never">hasło</mat-label>
-      <input matInput id="password" type="password" placeholder="placeholder" requiered [(ngModel)]="user.password"
-        name="password">
+      <mat-label for="password">hasło</mat-label>
+      <input matInput id="password" type="password" placeholder="placeholder" required
+        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}" [(ngModel)]="user.password" name="password" #password>
+      <button class="check-button" mat-icon-button matSuffix color="primary" tabindex="-1" type="button">
+        <mat-icon>check</mat-icon>
+      </button>
     </mat-form-field>
+    <div class="password-strength-container">
+      <mat-password-strength #passwordComponent [password]="password.value">
+      </mat-password-strength>
+    </div>
     <mat-form-field>
-      <mat-label for="password" floatLabel="never">powtórz hasło</mat-label>
-      <input matInput id="rep-password" type="password" placeholder="placeholder" requiered [(ngModel)]="repPassword"
+      <mat-label for="password">powtórz hasło</mat-label>
+      <input matInput id="rep-password" type="password" placeholder="placeholder" required [(ngModel)]="repPassword"
         name="repPassword">
+      <button class="check-button" mat-icon-button matSuffix color="primary" tabindex="-1" type="button">
+        <mat-icon>check</mat-icon>
+      </button>
     </mat-form-field>
-    <button mat-flat-button type="submit" color="primary" (click)="register()">Login</button>
+    <button class="submit-button" mat-flat-button type="submit" color="primary" [disabled]="registerForm.invalid">Załóż
+      Konto</button>
   </form>
 </div>
