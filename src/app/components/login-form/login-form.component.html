@@ -21,10 +21,6 @@
       <mat-hint align="end"><a href="/resetPassword">Zresetuj hasło</a></mat-hint>
     </mat-form-field>
     <div class="notification">{{message}}</div>
-    <!-- TODO it doesn't work -->
-    <!-- <div *ngIf="email.dirty || email.touched" class="alert"> -->
-    <!--   <div *ngIf="email.errors?.['required']">Email is requiered</div> -->
-    <!-- </div> -->
     <button class="submit-button" mat-flat-button type="submit" color="primary"
       [disabled]="loginForm.invalid">Login</button>
   </form>

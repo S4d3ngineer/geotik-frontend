@@ -2,9 +2,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 200px;
+  width: 200px;
   padding-top: 100px;
   margin: 0px auto;
+}
+
+.info {
+  display: none;
+  position: relative;
+  left: 30px;
 }
 
 .password-strength-container {
@@ -16,10 +22,18 @@
   margin-top: 20px;
 }
 
+.notification {
+  margin-top: 20px;
+}
+
 .check-button {
   display: none;
 }
 
 .ng-valid .check-button {
   display: block;
+}
+
+.mat-focused.ng-invalid .info {
+  display: block; 
 }

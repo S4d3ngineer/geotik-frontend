@@ -34,6 +34,8 @@ export class RegisterFormComponent {
 
   passwordRegex = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}/);
 
+  message: string | null = null;
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -51,7 +53,10 @@ export class RegisterFormComponent {
           registerform.resetForm();
           this.tabsService.setLoginRegisterTabIndex(Tabs.Login);
         },
-        error: e => console.error(e)
+        error: e => {
+          console.error(e);
+          this.message = e.error.msg;
+        }
       })
   }
 
