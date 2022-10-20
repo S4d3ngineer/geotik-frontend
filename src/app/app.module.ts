@@ -10,7 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginRegisterComponent } from './login-register/login-register.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ResetPasswordComponent } from './reset-password/reset-password.component'; 
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { BannerComponent } from './banner/banner.component'; 
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     LoginFormComponent,
     LoginRegisterComponent,
     RegisterFormComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,

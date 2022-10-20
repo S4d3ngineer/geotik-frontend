@@ -1,0 +1,22 @@
+.container  {
+  height: 100px;
+  overflow: hidden;
+}
+
+.background {
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+  z-index: 0;
+}
+
+.logo {
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+  left: calc(50% - 140px);
+}
+
+svg * {
+  fill: white;
+}
