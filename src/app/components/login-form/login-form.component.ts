@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http'; 
 import { NgForm } from '@angular/forms';
-// import User from '../user';
 
 interface User {
   email: string | null;
@@ -15,16 +14,17 @@ interface User {
 })
 export class LoginFormComponent {
 
-  private loginUrl = 'http://localhost:9090/auth/login'
-
   user: User = {
     email: null,
     password: null
   }
 
+  // Variable for storing error response messages
   message: string | null = null;
 
-  httpOptions = {
+  private loginUrl = 'http://localhost:9090/auth/login'
+
+  private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
@@ -33,11 +33,6 @@ export class LoginFormComponent {
   constructor(
     private http: HttpClient,
   ) { }
-
- // onSubmit(loginForm: NgForm) {
-  //   this.login();
-  //   loginForm.resetForm();
-  // }
 
   login(loginForm: NgForm): void {
     this.http.post<{msg: string}>(this.loginUrl, this.user, this.httpOptions)

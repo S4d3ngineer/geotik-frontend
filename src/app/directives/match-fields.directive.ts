@@ -11,10 +11,14 @@ import { createMatchFieldsValidator } from '../validators/match-fields.validator
   }]
 })
 export class MatchPasswordDirective implements Validator {
-  @Input('appMatchFields') matchPassword: string[] = []; 
+  @Input('appMatchFields') matchPassword: [string, string] | undefined; 
 
   validate(control: AbstractControl): ValidationErrors | null {
-      return createMatchFieldsValidator(this.matchPassword[0], this.matchPassword[1])(control);
+      if (this.matchPassword) {
+        return createMatchFieldsValidator(...this.matchPassword)(control);
+      } else {
+        return null;
+      }
   }
 
 }

@@ -32,7 +32,6 @@ import { MatchPasswordDirective } from './directives/match-fields.directive';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -16,13 +16,6 @@ interface User {
 })
 export class RegisterFormComponent {
 
-  constructor(
-    private http: HttpClient,
-    private tabsService: LogRegTabsService
-  ) { }
-
-  private registerUrl = 'http://localhost:9090/users';
-
   user: User = {
     id: null,
     email: null,
@@ -32,15 +25,24 @@ export class RegisterFormComponent {
   // Store value form confirm password field
   repPassword = null;
 
+  // Regular expression for validating regex
   passwordRegex = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}/);
 
+  // Variable for storing error response messages
   message: string | null = null;
+
+  private registerUrl = 'http://localhost:9090/users';
 
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
+
+  constructor(
+    private http: HttpClient,
+    private tabsService: LogRegTabsService
+  ) { }
 
   register(registerform: NgForm): void {
     // Generate id for new user

@@ -5,7 +5,7 @@
       <input matInput type="password" placeholder="placeholder" required [(ngModel)]="user.password" #password="ngModel"
         name="password">
       <button class="reset-field-button" mat-icon-button matSuffix tabindex="-1" type="button"
-        (click)="loginForm.controls['password'].reset()">
+        (click)="password.reset()">
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
@@ -15,7 +15,7 @@
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 
       <button class="reset-field-button" mat-icon-button matSuffix tabindex="-1" type="button"
-        (click)="loginForm.controls['email'].reset()">
+        (click)="email.reset()">
         <mat-icon>close</mat-icon>
       </button>
       <mat-hint align="end"><a href="/resetPassword">Zresetuj hasło</a></mat-hint>
