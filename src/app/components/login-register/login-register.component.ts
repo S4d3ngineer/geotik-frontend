@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LogRegTabsService } from '../services/log-reg-tabs.service';
+import { LogRegTabsService } from '../../services/log-reg-tabs.service';
 
 @Component({
   selector: 'app-login-register',

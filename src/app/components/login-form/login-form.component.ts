@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http'; 
 import { NgForm } from '@angular/forms';
-import User from '../user';
+// import User from '../user';
+
+interface User {
+  email: string | null;
+  password: string | null; 
+}
 
 @Component({
   selector: 'app-login-form',

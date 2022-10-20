@@ -1,8 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { LogRegTabsService } from '../services/log-reg-tabs.service';
-import User from '../user';
+import { LogRegTabsService } from '../../services/log-reg-tabs.service';
+
+interface User {
+  id: string | null;
+  email: string | null;
+  password: string | null;
+}
 
 @Component({
   selector: 'app-register-form',
@@ -24,6 +29,7 @@ export class RegisterFormComponent {
     password: null,
   }
 
+  // Store value form confirm password field
   repPassword = null;
 
   passwordRegex = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}/);
