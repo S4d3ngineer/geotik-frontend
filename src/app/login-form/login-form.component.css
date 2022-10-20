@@ -11,6 +11,14 @@
   margin-top: 20px;
 }
 
-button {
+.submit-button {
   margin-top: 20px;
 }
+
+.ng-pristine .reset-field-button {
+  display: none;
+}
+
+/* .ng-dirty .reset-field-button { */
+/*   display: block; */
+/* } */

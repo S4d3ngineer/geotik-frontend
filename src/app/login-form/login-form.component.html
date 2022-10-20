@@ -1,22 +1,31 @@
 <div class="form">
-  <form class="form-content">
+  <form class="form-content" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
     <mat-form-field>
-      <mat-label for="password" floatLabel="never">hasło</mat-label>
-      <input matInput id="password" type="password" placeholder="placeholder" requiered [(ngModel)]="user.password"
-        #email="ngModel" name="password">
-      <mat-icon matSuffix>close</mat-icon>
+      <mat-label for="password">hasło</mat-label>
+      <input matInput type="password" placeholder="placeholder" required [(ngModel)]="user.password" #password="ngModel"
+        name="password">
+      <button class="reset-field-button" mat-icon-button matSuffix tabindex="-1" type="button"
+        (click)="loginForm.controls['password'].reset()">
+        <mat-icon>close</mat-icon>
+      </button>
     </mat-form-field>
     <mat-form-field>
-      <label for="email">login/e-mail</label>
-      <input matInput id="email" type="email" requiered [(ngModel)]="user.email" #password="ngModel" name="email">
-      <mat-icon matSuffix>close</mat-icon>
+      <mat-label for="email">login/e-mail</mat-label>
+      <input matInput type="email" required [(ngModel)]="user.email" #email="ngModel" name="email"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+
+      <button class="reset-field-button" mat-icon-button matSuffix tabindex="-1" type="button"
+        (click)="loginForm.controls['email'].reset()">
+        <mat-icon>close</mat-icon>
+      </button>
       <mat-hint align="end"><a href="/resetPassword">Zresetuj hasło</a></mat-hint>
     </mat-form-field>
     <div class="notification">{{message}}</div>
-    <!-- TODO it doesn't work --> 
-    <div *ngIf="email.dirty || email.touched" class="alert">
-      <div *ngIf="email.errors?.['requiered']">Email is requiered</div>
-    </div>
-    <button mat-flat-button type="submit" color="primary" (click)="login()">Login</button>
+    <!-- TODO it doesn't work -->
+    <!-- <div *ngIf="email.dirty || email.touched" class="alert"> -->
+    <!--   <div *ngIf="email.errors?.['required']">Email is requiered</div> -->
+    <!-- </div> -->
+    <button class="submit-button" mat-flat-button type="submit" color="primary"
+      [disabled]="loginForm.invalid">Login</button>
   </form>
 </div>

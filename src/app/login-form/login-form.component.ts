@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http'; 
+import { NgForm } from '@angular/forms';
 import User from '../user';
 
 @Component({
@@ -28,11 +29,18 @@ export class LoginFormComponent {
     private http: HttpClient,
   ) { }
 
-  login(): void {
-    console.log(this.user);
+ // onSubmit(loginForm: NgForm) {
+  //   this.login();
+  //   loginForm.resetForm();
+  // }
+
+  login(loginForm: NgForm): void {
     this.http.post<{msg: string}>(this.loginUrl, this.user, this.httpOptions)
       .subscribe({
-        next: response => this.message = response.msg,
+        next: response => {
+          this.message = response.msg;
+          loginForm.resetForm();
+        },
         error: e => {
           console.error(e);
           this.message = e.error.msg;
