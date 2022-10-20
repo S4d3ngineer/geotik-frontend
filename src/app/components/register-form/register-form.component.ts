@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { LogRegTabsService } from '../../services/log-reg-tabs.service';
+import { LogRegTabsService, Tabs } from '../../services/log-reg-tabs.service';
 
 interface User {
   id: string | null;
@@ -49,7 +49,7 @@ export class RegisterFormComponent {
         next: response => {
           console.log(response);
           registerform.resetForm();
-          this.tabsService.setLoginRegisterTabIndex(0);
+          this.tabsService.setLoginRegisterTabIndex(Tabs.Login);
         },
         error: e => console.error(e)
       })
