@@ -4,7 +4,7 @@
       <mat-label for="password">hasło</mat-label>
       <input matInput type="password" required [(ngModel)]="user.password" #password="ngModel"
         name="password">
-      <button class="reset-field-button" mat-icon-button matSuffix tabindex="-1" type="button"
+      <button class="reset-field-button" mat-icon-button matSuffix *ngIf="password.value" tabindex="-1" type="button"
         (click)="password.reset()">
         <mat-icon>close</mat-icon>
       </button>
@@ -14,7 +14,7 @@
       <input matInput type="email" required [(ngModel)]="user.email" #email="ngModel" name="email"
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 
-      <button class="reset-field-button" mat-icon-button matSuffix tabindex="-1" type="button"
+      <button class="reset-field-button" mat-icon-button matSuffix *ngIf="email.value" tabindex="-1" type="button"
         (click)="email.reset()">
         <mat-icon>close</mat-icon>
       </button>
