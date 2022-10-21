@@ -4,6 +4,7 @@ import { LoginRegisterComponent } from './components/login-register/login-regist
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginRegisterComponent },
   { path: 'resetPassword', component: ResetPasswordComponent }
 ]
