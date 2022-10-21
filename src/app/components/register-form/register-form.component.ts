@@ -44,7 +44,7 @@ export class RegisterFormComponent {
     private tabsService: TabsService
   ) { }
 
-  register(registerform: NgForm): void {
+  onSubmit(registerform: NgForm): void {
     // Generate id for new user
     this.user.id = 'user_' + Math.floor(Math.random() * 10000000);
     const newUser = JSON.stringify(this.user);

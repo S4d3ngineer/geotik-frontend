@@ -34,7 +34,7 @@ export class LoginFormComponent {
     private http: HttpClient,
   ) { }
 
-  login(loginForm: NgForm): void {
+  onSubmit(loginForm: NgForm): void {
     this.http.post<{msg: string}>(this.loginUrl, this.user, this.httpOptions)
       .subscribe({
         next: response => {

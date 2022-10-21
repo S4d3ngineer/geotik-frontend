@@ -1,3 +1,7 @@
+.form-content {
+  align-items: flex-start;
+}
+
 .pop-info {
   display: none;
   position: relative;
@@ -5,12 +9,13 @@
 }
 
 .password-strength-container {
-  width: 120px;
+  width: 100px;
   margin-bottom: 20px;
 }
 
 .submit-button {
   margin-top: 20px;
+  align-self: center;
 }
 
 .check {

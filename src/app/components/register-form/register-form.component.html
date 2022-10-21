@@ -1,5 +1,5 @@
 <div class="form">
-  <form class="form-content" #registerForm="ngForm" (ngSubmit)="register(registerForm)"
+  <form class="form-content" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)"
     [appMatchFields]="['password', 'repPassword']">
     <mat-form-field>
       <mat-label for="email">login/e-mail</mat-label>
