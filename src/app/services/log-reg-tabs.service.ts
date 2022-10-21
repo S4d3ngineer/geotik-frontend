@@ -12,14 +12,14 @@ export enum Tabs {
 export class LogRegTabsService {
 
   // Default tab index of login-register component
-  private loginRegisterTabIndex = new BehaviorSubject<Tabs>(0);
+  private tabIndexSubject = new BehaviorSubject<Tabs>(0);
 
   // Exposing loginRegisterTabIndex as plain observable
-  tabIndex = this.loginRegisterTabIndex.asObservable();
+  tabIndex = this.tabIndexSubject.asObservable();
 
   // Public method to alter loginRegisterTabIndex value
-  setLoginRegisterTabIndex(index: Tabs) {
-    this.loginRegisterTabIndex.next(index);
+  setTabIndex(index: Tabs) {
+    this.tabIndexSubject.next(index);
   }
 
 }

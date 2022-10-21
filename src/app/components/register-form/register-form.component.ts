@@ -53,7 +53,7 @@ export class RegisterFormComponent {
         next: response => {
           console.log(response);
           registerform.resetForm();
-          this.tabsService.setLoginRegisterTabIndex(Tabs.Login);
+          this.tabsService.setTabIndex(Tabs.Login);
         },
         error: e => {
           console.error(e);

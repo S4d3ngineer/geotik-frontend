@@ -1,6 +1,6 @@
 <div class="container">
   <mat-tab-group mat-stretch-tabs mat-align-tabs="center" [selectedIndex]="tabsService.tabIndex | async"
-    (selectedIndexChange)="tabsService.setLoginRegisterTabIndex($event)">
+    (selectedIndexChange)="tabsService.setTabIndex($event)">
     <mat-tab label="login">
       <app-login-form></app-login-form>
     </mat-tab>
