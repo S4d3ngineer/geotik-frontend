@@ -26,11 +26,11 @@
   margin-top: 20px;
 }
 
-.check-button {
+.check {
   display: none;
 }
 
-.ng-valid .check-button {
+.ng-valid .check {
   display: block;
 }
 
