@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LogRegTabsService } from '../../services/log-reg-tabs.service';
+import { TabsService } from '../../services/tabs.service';
 
 @Component({
   selector: 'app-login-register',
@@ -9,7 +9,7 @@ import { LogRegTabsService } from '../../services/log-reg-tabs.service';
 export class LoginRegisterComponent {
 
   constructor(
-    public tabsService: LogRegTabsService,
+    public tabsService: TabsService,
   ) { }
 
 }

@@ -9,7 +9,7 @@ export enum Tabs {
 @Injectable({
   providedIn: 'root'
 })
-export class LogRegTabsService {
+export class TabsService {
 
   // Default tab index of login-register component
   private tabIndexSubject = new BehaviorSubject<Tabs>(0);

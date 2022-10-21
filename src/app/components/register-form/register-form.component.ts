@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { LogRegTabsService, Tabs } from '../../services/log-reg-tabs.service';
+import { TabsService, Tabs } from '../../services/tabs.service';
 
 interface User {
   id: string | null;
@@ -41,7 +41,7 @@ export class RegisterFormComponent {
 
   constructor(
     private http: HttpClient,
-    private tabsService: LogRegTabsService
+    private tabsService: TabsService
   ) { }
 
   register(registerform: NgForm): void {
