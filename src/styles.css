@@ -12,3 +12,19 @@ a {
   text-decoration: none;
   color: rgba(0, 0, 0, .87);
 }
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+  margin: 50px auto 0px auto;
+}
+
+.feedback {
+  margin: 20px 0px;
+  text-align: center;
+}
+
+

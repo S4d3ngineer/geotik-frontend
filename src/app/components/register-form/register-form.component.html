@@ -6,7 +6,7 @@
       <input matInput id="email" type="email" required [(ngModel)]="user.email" name="email" email
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
       <mat-icon class="check" matSuffix color="primary">check</mat-icon>
-      <mat-icon class="info" matSuffix matTooltip="Adres email, który będzie jednocześnie loginem."
+      <mat-icon class="pop-info" matSuffix matTooltip="Adres email, który będzie jednocześnie loginem."
         matTooltipPosition="right">error_outline</mat-icon>
     </mat-form-field>
     <mat-form-field>
@@ -14,7 +14,7 @@
       <input matInput id="password" type="password" required
         pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}" [(ngModel)]="user.password" name="password" #password>
       <mat-icon class="check" matSuffix color="primary">check</mat-icon>
-      <mat-icon class="info" matSuffix
+      <mat-icon class="pop-info" matSuffix
         matTooltip="Hasło powinno zawierać przynajmniej 8 znaków, w tym przynajmniej jedną małą literę, jedną wielką literę i jedną cyfrę."
         matTooltipPosition="right">error_outline</mat-icon>
     </mat-form-field>
@@ -27,7 +27,7 @@
       <input matInput id="rep-password" type="password" required [(ngModel)]="repPassword"
         name="repPassword">
       <mat-icon class="check" matSuffix color="primary">check</mat-icon>
-      <mat-icon class="info" matSuffix matTooltip="Wprowadzone hasła muszą być identyczne."
+      <mat-icon class="pop-info" matSuffix matTooltip="Wprowadzone hasła muszą być identyczne."
         matTooltipPosition="right">error_outline</mat-icon>
     </mat-form-field>
     <div class="feedback">{{message}}</div>

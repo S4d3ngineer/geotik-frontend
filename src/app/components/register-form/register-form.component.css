@@ -1,13 +1,4 @@
-.form-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 200px;
-  padding-top: 100px;
-  margin: 0px auto;
-}
-
-.info {
+.pop-info {
   display: none;
   position: relative;
   left: 30px;
@@ -22,10 +13,6 @@
   margin-top: 20px;
 }
 
-.feedback {
-  margin-top: 20px;
-}
-
 .check {
   display: none;
 }
@@ -34,6 +21,6 @@
   display: block;
 }
 
-.mat-focused.ng-invalid .info {
+.mat-focused.ng-invalid .pop-info {
   display: block; 
 }
